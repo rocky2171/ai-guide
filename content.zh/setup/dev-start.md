@@ -47,8 +47,6 @@ winget install Microsoft.WindowsTerminal
 winget install BurntSushi.ripgrep.MSVC
 ```
 
-官方下载页：[ripgrep.dev/download](https://ripgrep.dev/download/)
-
 **2. Git** — 多数 Agent 默认依赖 `git diff` / `status` / patch 流程；版本控制也是工作流基础。
 
 ```powershell
@@ -87,7 +85,10 @@ winget install sharkdp.fd
 
 验证：`fd --version`
 
-补充：`rg`（ripgrep）和 `fd` 经常被一起提到，甚至 **是同一个作者 Andrew Gallant 的作品**；但它们职责完全不同，属于「工具链互补」而不是「互相替代」。
+补充：`rg`（ripgrep）和 `fd` 经常被一起提到，职责完全不同，属于「工具链互补」而不是「互相替代」。**不是同一个作者，很多人会搞混这点**：
+
+- **`rg` (ripgrep)**：作者是 Andrew Gallant，网名 [BurntSushi](https://github.com/BurntSushi)
+- **`fd` (fd-find)**：作者是 David Peter，网名 [sharkdp](https://github.com/sharkdp)（同时也是 `bat`、`hyperfine` 这些知名 Rust CLI 工具的作者）
 
 | 工具 | 本质 | 主要替代 |
 | --- | --- | --- |
@@ -100,7 +101,7 @@ winget install sharkdp.fd
 winget install sharkdp.bat
 ```
 
-在 Windows 上可执行名可能是 `bat` 或 `batcat`，以 `winget` 安装后的实际命令为准。
+Windows 上（含 `winget install sharkdp.bat`）命令名一般是 `bat`。`batcat` 主要出现在部分 Debian/Ubuntu 包装里（与旧包名冲突），不是 Windows 常态。
 
 如果你不想额外安装 `bat`，PowerShell 原生命令 `Get-Content`（别名 `gc`）也能完成基础查看文件内容的需求。
 
@@ -153,7 +154,7 @@ winget install dandavison.delta
 **12. lazygit** — 终端里的 Git TUI，和「命令行优先」的 AI 编程工作流很搭。
 
 ```powershell
-winget install jesseduffield.lazygit
+winget install JesseDuffield.lazygit
 ```
 
 ### 核心认知：终端质量 ≈ Agent 体验
@@ -164,111 +165,60 @@ winget install jesseduffield.lazygit
 
 ### 1. 代码编辑器
 
-**VS Code** 仍是 AI 编程工具（Cursor、Claude Code、OpenCode 等）的常见基座，建议首选。
+**VS Code** 仍是主流编辑器，也是不少 AI 编程工具的常见宿主环境：Cursor 基于 VS Code 衍生；Claude Code 等则以终端 CLI 为主，并另有 VS Code 扩展。建议优先装好 VS Code（或 Cursor），再按需接 CLI / 扩展。
 
 - 官网：[code.visualstudio.com](https://code.visualstudio.com/)
-- 可选：JetBrains IDE、Vim/Neovim、[Zed](https://zed.dev/) 等
-- **Zed 汉化版（ZedG）**：社区维护的 Zed 多语言构建，界面已翻译为简体中文（亦支持繁中/日语/韩语），并附带 Agent 环境变量透传等补丁。适合想用 Zed 但偏好中文界面的用户。
-  - 项目：[x6nux/zed-globalization](https://github.com/x6nux/zed-globalization)
-  - Windows 安装（Scoop）：
+- 可选：JetBrains IDE、Vim/Neovim、[Zed](https://zed.dev/) | [Zed-ZH](https://github.com/x6nux/zed-globalization/releases) 等
 
-    ```powershell
-    scoop bucket add zedg https://github.com/x6nux/scoop-zedg
-    scoop install zedg
-    ```
 
-  - 也可从 [Releases](https://github.com/x6nux/zed-globalization/releases) 下载预编译包手动解压运行
-
-### 2. Obsidian
+### 2. Markdown
 
 个人知识库与笔记工具，适合整理 AI 编程笔记、提示词和项目文档。
 
-- 官网：[obsidian.md](https://obsidian.md/)
+- [Obsidian](https://obsidian.md/)、[Markpad](https://markpad.sftwr.dev/)、[Moraya](https://moraya.app/zh/)、[HorseMD](https://horsemd.yangsir.net/)
 
 ### 3. 网络与代理
 
 使用Google或ChatGPT等需要科学上网工具。
 
-- [客户端：Clash Verge](https://www.clashverge.dev/install.html)
-- [客户端：Clash Party](https://clashparty.org/)
-- [客户端 FlClash：适用于 Clash 的多功能图形用户界面。](https://flclash.cc/download.html)
-- [NoMoreWalls](https://github.com/peasoft/NoMoreWalls) — 自动抓取合并互联网上的公开节点，提供 Clash Meta / Base64 等订阅（免费公开节点安全性无法保障，仅作学习交流；重要流量勿依赖）
-- [🚁🚀 2026低价机场推荐](https://github.com/DiningFactory/panda-vpn-pro)
-- [2026年便宜好用的翻墙机场推荐评测(科学上网长期更新)](https://www.ermao.net/posts/vpn/)
-- [最优的科学上网方案](https://github.com/githubvpn007/v2rayNvpn)
+- 客户端 [Clash Verge](https://www.clashverge.dev/install.html) 、 [Clash Party](https://clashparty.org/)、[FlClash](https://flclash.cc/download.html)
+- [NoMoreWalls 免费公开节点](https://github.com/peasoft/NoMoreWalls) 、[低价机场推荐](https://github.com/DiningFactory/panda-vpn-pro) 、 [便宜好用评测](https://www.ermao.net/posts/vpn/)、 [最优的科学上网方案](https://github.com/githubvpn007/v2rayNvpn)
 
-注意：网络访问与代理工具的使用受所在地法律法规约束，请自行确认合规后再使用。第三方客户端、订阅/机场服务存在隐私泄露、跑路、日志政策不透明等风险，链接仅供信息参考，不构成推荐或担保；重要流量请优先选择可信方案并做好账号与设备安全。
+注意：网络访问与代理工具的使用受所在地法律法规约束，请自行确认合规后再使用。
 
 ### 4. AI 客户端（调测）
-
 在接入 Cursor、Claude Code 等「编程向」工具之前，用独立客户端先完成 **API 配置、模型连通性、提示词试跑与流式输出观察**，能快速区分是网络/密钥问题还是 IDE 插件问题。
 
-#### Cherry-AI
-
-一站式 AI 开发与工具聚合环境（具体能力与套餐以官网为准），适合希望少装几个独立应用、在同一工作台里完成多模型与周边能力的用户。
-
-- 官网：[cherry-ai.com](https://cherry-ai.com/)
-
-#### Chatbox
-
-开源/跨平台的对话客户端，支持自定义 Base URL 与多家 API，适合 **本地或云端密钥调试**、对比不同模型回复、以及日常轻量问答（非编程场景也可复用同一套配置）。
-
-- 官网：[chatboxai.app](https://chatboxai.app/)
-- Web 版：[web.chatboxai.app](https://web.chatboxai.app/)
+- Cherry-AI：[cherry-ai.com](https://cherry-ai.com/)
+- Chatbox-AI：[chatboxai.app](https://chatboxai.app/)
+- Jan-AI：[jan.ai](https://jan.ai/)
 
 ### 5. Google 邮箱（账号）
 
-目前个人想注册 Google 账号非常复杂甚至不可能（时区、定位、语言、IP、手机验证码等限制），如果你只是为了完成开发环境准备（例如登录某些开发者工具、同步浏览器配置、使用部分 AI 平台），可考虑通过第三方购买现成账号。
+目前注册 Google 账号非常复杂甚至不可能，可考虑通过第三方购买现成账号。
 
-- 购买入口 1：[Acc-OTAOR](https://acc.otaor.com/)
+- 购买入口 1：[https://wzyp.cn/shop/2VWX76A4](https://wzyp.cn/shop/2VWX76A4)
 - 购买入口 2：[https://pay.ldxp.cn/shop/AEUQ8PP3](https://pay.ldxp.cn/shop/AEUQ8PP3)
 
-注意：购买/使用第三方账号可能违反平台服务条款并存在安全与合规风险。拿到账号后建议第一时间**修改密码**、启用/重置 **2FA**、绑定自己的恢复邮箱/手机号，并避免用于任何违规用途。
 
-### 6. ChatGPT 账号（购买入口）
+### 6. ChatGPT 账号
 
-若需使用 ChatGPT、Codex，GPT-images2 等官方产品而暂无自有账号，部分用户会通过第三方渠道购买现成账号（与上节同理，请自行甄别渠道可信度）。
+- 第三方镜像 / 共享入口（非官方，可用性与安全性自负）： [EasyChat 免费账号](https://easychat.top/chatgpt/free)、[AI 镜像](https://go.github.cn.com) 、 [车队列表](https://share.github.cn.com/list)  、 [GE Chat 地址发布页](https://home.gege.chat/)
 
-#### 官方镜像（免费体验 / 共享入口）
+- 购买入口：[pay.ldxp.cn/shop/xcursor](https://pay.ldxp.cn/shop/xcursor)、[wafase.com](https://wafase.com/)
 
-- [EasyChat 免费账号](https://easychat.top/chatgpt/free) — ChatGPT 官网镜像，点击卡片即可开始对话
-- [AI 镜像](https://go.github.cn.com) — 镜像入口
-- [车队列表](https://share.github.cn.com/list) — 共享车队列表，选择车队后进入使用
-- [GE Chat 地址发布页](https://home.gege.chat/) — ChatGPT / Claude 付费站与公益站入口汇总
-
-#### 购买入口
-
-- 购买入口 1：[pay.ldxp.cn/shop/xcursor](https://pay.ldxp.cn/shop/xcursor)
-- 购买入口 2：[wafase.com](https://wafase.com/)
-- 购买入口 4：[Acc-OTAOR](https://acc.otaor.com/)
-
-注意：风险与合规事项同上文「Google 邮箱」— 第三方账号/镜像可能违反平台条款；到手后尽快改密、检查绑定与恢复方式，并仅用于合法用途。镜像与共享入口稳定性、可用性与合规性请自行甄别。
 
 ### 7. 其他
 
-#### 临时邮箱
+- 临时邮箱：[Temp Mail](https://temp-mail.org/zh/)
+、 [TempInbox](https://tempmail.easya.work/zh-CN/)
+、[Cloudflare 临时邮件](https://mail.awsl.uk/)
 
-- [Temp Mail](https://temp-mail.org/zh/)
-- [TempInbox](https://tempmail.easya.work/zh-CN/)
-- [Cloudflare 临时邮件](https://mail.awsl.uk/)
+- 指纹浏览器： [ixBrowser](https://ixbrowser.com/zh)、 [adspower](https://www.adspower.net/download/)
 
-#### 指纹浏览器
+- 信用卡 / 支付： Bybit、Fiat24、Roogoo、[goofish](https://www.goofish.com/search?q=虚拟卡) 等
 
-- [ixBrowser](https://ixbrowser.com/zh)
-- [adspower](https://www.adspower.net/download/)
-
-#### 信用卡 / 支付
-
-- Bybit、Fiat24、Roogoo 等
-
-#### 短信接收
-
-注册 Google、Telegram、OpenAI 等平台账号时，常需手机验证码。若暂无可用号码，可通过接码平台获取临时号码接收 SMS（与上节「Google 邮箱」场景类似，也可用于自行注册时的验证环节）。
-
-- [火狐狸接码平台](https://web.firefox.fun/) — 全球 180+ 国家号码，覆盖 Telegram、Instagram、WhatsApp 等常见项目，提供客户端与 API
-- [HeroSMS](https://hero-sms.com/cn) — 180+ 国家虚拟号码，支持网站与 API，覆盖 Google/OpenAI/Telegram 等 700+ 服务
-- [5SIM](https://5sim.net/zh) — 老牌接码平台，按项目与国家选号
-- 购买入口：[pay.ldxp.cn/shop/AEUQ8PP3](https://pay.ldxp.cn/shop/AEUQ8PP3)
-- [国内免费接码平台推荐](https://topstip.com/nice-patchwork-platform/) — 汇总类参考
-
-注意：接码平台号码多为共享/一次性资源，存在被平台风控、账号关联封禁等风险；仅用于合法注册与测试，勿用于违规批量注册。第三方渠道请自行甄别可信度。
+- 短信接收： [火狐狸接码平台](https://web.firefox.fun/) 
+、 [HeroSMS](https://hero-sms.com/cn) 
+、 [5SIM](https://5sim.net/zh) 
+、 [国内免费接码平台推荐](https://topstip.com/nice-patchwork-platform/) 

@@ -20,7 +20,11 @@ bookFlatSection: true
 
 ### 配置与增强
 
-- [环境配置与增强工具集]({{< relref "setup/env-and-tools" >}}) — 环境变量、供应商切换、常用增强
+- [环境配置与增强工具集]({{< relref "setup/env-and-tools" >}}) — 桌面 / 路由 / 终端 / 插件选型速查（按任务怎么选）
 - [ZCF 零配置]({{< relref "setup/zcf" >}}) — 少折腾上手 Claude Code / Codex
 - [CC-Switch]({{< relref "setup/cc-switch" >}}) — 可视化管理 MCP / Skills / Prompts
 - [CLI 代理 API（CPA）]({{< relref "setup/cpa" >}}) — 订阅统一为 API，多端复用（接入层网关）
+
+### 维护与清理
+
+- [卸载与磁盘清理]({{< relref "setup/cleanup-uninstall" >}}) — 系统存储/WizTree、npm/uv 缓存、Dev Janitor、Geek Uninstaller、FolderMove、Mole

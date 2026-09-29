@@ -38,12 +38,11 @@
 
 ### 1. 选模型、选工具、控成本
 
-- [AI 编程模型选型](https://ai-guide.180813.xyz/ai-programming/models/) — 能力 × 成本 × 任务适配
 - [AI Coding Plan 订阅选型](https://ai-guide.180813.xyz/ai-programming/coding-plan/) — 套餐怎么选更划算
 - [AI 编程工具汇总](https://ai-guide.180813.xyz/ai-programming/vb-code-tool/) — IDE / 插件 / Agent 工具对比
 - [AI CLI 工具横评](https://ai-guide.180813.xyz/ai-programming/code-cli/) — Claude Code / Codex / Gemini CLI 等
 - [AI 编程省钱之道](https://ai-guide.180813.xyz/ai-programming/ai-coding-save-money/) — 免费额度、Token 与多端复用
-- [2026 年主流大模型盘点](https://ai-guide.180813.xyz/ai-programming/models-2026/) · [价格对比](https://ai-guide.180813.xyz/ai-programming/model-price/)
+- [大模型价格对比](https://ai-guide.180813.xyz/ai-programming/model-price/)
 
 ### 2. 按场景选 AI 应用
 
@@ -87,7 +86,6 @@
 - [AI 资源与工具指南](https://ai-guide.180813.xyz/tutorials/ai-resources-guide/) — 站内精选 + 社区 / 资讯入口
 - [菜鸟教程 AI / 智能开发](https://ai-guide.180813.xyz/tutorials/runoob-online-tutorials/) — RUNOOB 中文 AI 教程速查表
 - [GitHub 周边工具速查](https://ai-guide.180813.xyz/tutorials/github-extensions/) — 加速、仓库阅读与效率工具
-- [精选 LLM 应用集](https://ai-guide.180813.xyz/tutorials/awesome-llm-apps/) — 优秀应用与灵感库
 
 > 完整导航与更多页面见 [在线站点首页](https://ai-guide.180813.xyz/)。
 

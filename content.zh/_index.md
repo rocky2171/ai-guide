@@ -32,7 +32,7 @@ noTocArea: true
 <nav class="home-tracks" aria-label="七条主线">
 <a class="home-track-card" href="/ai-programming/">
 <span class="home-track-title">模型与工具选型</span>
-<span class="home-track-desc">上手体感、选模型、选工具 / 套餐、控成本。</span>
+<span class="home-track-desc">选模型、选工具 / 套餐、控成本。</span>
 </a>
 <a class="home-track-card" href="/ai-products/">
 <span class="home-track-title">AI 应用选型</span>
@@ -64,7 +64,7 @@ noTocArea: true
 
 | 目标 | 入口 |
 |------|------|
-| 选模型 / 控成本 | [编程模型选型]({{< relref "ai-programming/models" >}}) · [价格]({{< relref "ai-programming/model-price" >}}) · [Coding Plan]({{< relref "ai-programming/coding-plan" >}}) |
+| 选模型 / 控成本 | [榜单与基准]({{< relref "ai-programming/Leaderboard" >}}) · [价格]({{< relref "ai-programming/model-price" >}}) · [Coding Plan]({{< relref "ai-programming/coding-plan" >}}) |
 | 一次配好环境 | [开发环境准备]({{< relref "setup/dev-start" >}}) · [增强工具集]({{< relref "setup/env-and-tools" >}}) · [CPA]({{< relref "setup/cpa" >}}) |
 | 10 分钟开工 | [Cursor]({{< relref "project-practice/cursor" >}}) · [Codex]({{< relref "project-practice/codex" >}}) · [Kiro]({{< relref "project-practice/kiro-practice" >}}) |
 | 多模型协作交付 | [工作流栏目]({{< relref "workflow/_index" >}}) · [CCG]({{< relref "workflow/ccg" >}}) · [GSD]({{< relref "workflow/gsd" >}}) |

@@ -43,7 +43,7 @@ bookHidden: false
 ### 可选扩展（需要时再点开）
 
 - **选模型**：你纠结“该用哪个模型/套餐”时再看  
-  - [AI 编程模型选型]({{< relref "ai-programming/models" >}})
+  - [LLM 评测基准与榜单汇总]({{< relref "ai-programming/Leaderboard" >}})
   - [AI Coding Plan 订阅选型]({{< relref "ai-programming/coding-plan" >}})
 - **环境增强/接入更多端**：你已经能跑通，但想更省事、更统一时再看  
   - [AI 编程环境配置与增强工具集]({{< relref "setup/env-and-tools" >}})

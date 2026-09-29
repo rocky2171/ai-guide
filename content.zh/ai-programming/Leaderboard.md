@@ -4,42 +4,15 @@ aliases:
 title: LLM 评测基准与榜单汇总
 weight: 13
 date: 2026-02-09T14:43:00+08:00
-bookHidden: true
+bookHidden: false
 ---
+
 
 ## LLM 相关评测基准与榜单汇总｜Leaderboard
 
-## 1\. LiveBench
+> 下列条目大致按**业内知名度 / 引用频率**排序（主观判断，非能力排名）。选型时建议交叉看 2–3 个不同方法论的榜单，不要只盯单一分数。
 
-**链接**：[https://livebench.ai](https://livebench.ai/)
-
-**保持更新**：✅
-
-**主办**：LiveBench/Abacus.AI 等
-
-**备注**：动态题库、客观打分、避免“LLM裁判”，官方说明每月释出新题/更难题；有论文与数据手册可查。可参考其GitHub仓库（[https://github.com/LiveBench/LiveBench/blob/main/README.md](https://github.com/LiveBench/LiveBench/blob/main/README.md)）及官方文档（[https://livebench.ai/livebench.pdf](https://livebench.ai/livebench.pdf)）。
-
-## 2\. Artificial Analysis
-
-**链接**：[https://artificialanalysis.ai/leaderboards/models](https://artificialanalysis.ai/leaderboards/models)
-
-**保持更新**：✅
-
-**主办**：Artificial Analysis
-
-**备注**：综合聚合类榜单，包含 MMLU‑Pro、AAII 等多个基准数据，提供性能、价格、速度、上下文长度等多维度对比。详细信息可查看其官方榜单页面（[https://artificialanalysis.ai/leaderboards/models](https://artificialanalysis.ai/leaderboards/models)）。
-
-## 3\. aider polyglot
-
-**链接**：[https://aider.chat/docs/leaderboards/](https://aider.chat/docs/leaderboards/)
-
-**保持更新**：✅
-
-**主办**：Aider
-
-**备注**：专注于多语言代码编辑能力的基准，基于 Exercism 平台的 225 道难题构建，覆盖 C++、Go、Java、JavaScript、Python、Rust 六种编程语言，是旧版 Python 代码榜单的替代版本。官方详情可参考（[https://aider.chat/docs/leaderboards/](https://aider.chat/docs/leaderboards/)）。
-
-## 4\. Chatbot Arena（LMSYS）
+## 1\. Chatbot Arena（LMSYS / LMArena）
 
 **链接**：[https://lmarena.ai/leaderboard](https://lmarena.ai/leaderboard)
 
@@ -47,17 +20,47 @@ bookHidden: true
 
 **主办**：LMSYS / UC Berkeley
 
-**备注**：基于人类偏好投票的 Elo 排名体系，已累计覆盖 350 万+ 次投票；除主榜外，还设有 Hard、HARDAuto、Search 等子榜单。相关参考包括 LMArena 官网（[https://lmarena.ai/](https://lmarena.ai/)）、《华尔街日报》报道（[https://www.wsj.com/tech/ai/the-uc-berkeley-project-that-is-the-ai-industrys-obsession-bc68b3e3](https://www.wsj.com/tech/ai/the-uc-berkeley-project-that-is-the-ai-industrys-obsession-bc68b3e3)）及 LMSYS 技术博客（[https://lmsys.org/blog/2024-04-19-arena-hard/](https://lmsys.org/blog/2024-04-19-arena-hard/)）。
+**备注**：目前最有影响力的**人类偏好**榜单：盲测对战 + Elo 排名，投票量极大，厂商与媒体常以此对标「体感强弱」。除主榜外还有 Hard、Style Control、Search 等子榜。适合看通用对话口碑，不适合单独当代码/Agent 能力结论。延伸阅读：[LMArena](https://lmarena.ai/)、[WSJ 报道](https://www.wsj.com/tech/ai/the-uc-berkeley-project-that-is-the-ai-industrys-obsession-bc68b3e3)、[Arena-Hard 博客](https://lmsys.org/blog/2024-04-19-arena-hard/)。
 
-## 5\. 司南（OpenCompass）
+## 2\. SWE‑bench
 
-**链接**：[https://github.com/open-compass/opencompass](https://github.com/open-compass/opencompass)
+**链接**：[https://www.swebench.com/](https://www.swebench.com/)
 
 **保持更新**：✅
 
-**主办**：上海AI实验室 / OpenCompass
+**主办**：Princeton / SWE‑bench 团队
 
-**备注**：面向开源模型与 API 模型的统一评测框架，配套有 **Compass Academic** 学术榜单（部署于 Hugging Face Space）。可通过 GitHub 仓库（[https://github.com/open-compass/opencompass](https://github.com/open-compass/opencompass)）查看源码，或在 Hugging Face（[https://huggingface.co/spaces/opencompass/Compass\_Academic\_Leaderboard](https://huggingface.co/spaces/opencompass/Compass_Academic_Leaderboard)）查看学术榜单数据。
+**备注**：编程 Agent 领域的事实标准之一：用真实 GitHub issue 测「能不能修仓库」。含 Verified / Lite / Multimodal 等变体，结果常被论文与产品发布引用。看代码落地能力优先看这里，注意提交配置与 scaffold 差异会影响分数可比性。
+
+## 3\. Artificial Analysis
+
+**链接**：[https://artificialanalysis.ai/zh/leaderboards/models](https://artificialanalysis.ai/zh/leaderboards/models)
+
+**保持更新**：✅
+
+**主办**：Artificial Analysis
+
+**备注**：偏「选型仪表盘」的聚合站：把质量分、价格、速度、上下文长度等放在同一视图对比，并汇总 MMLU‑Pro、AA 自有指数等。适合快速筛「够用且划算」的模型，细节仍需回看单项基准原文。
+
+## 4\. OpenRouter Rankings
+
+**链接**：[https://openrouter.ai/rankings](https://openrouter.ai/rankings)
+
+**保持更新**：✅
+
+**主办**：OpenRouter
+
+**备注**：**用量 / 市占**榜，不是能力榜。反映聚合路由上真实调用热度与品类偏好，可用来判断「市场在用什么」，不宜当作谁更强。
+
+## 5\. 司南（OpenCompass）
+
+**链接**：[https://rank.opencompass.org.cn/leaderboard/llm](https://rank.opencompass.org.cn/leaderboard/llm)
+
+**保持更新**：✅
+
+**主办**：上海 AI 实验室 / OpenCompass
+
+**备注**：国内最常用的统一评测框架之一，官方榜单覆盖开源与 API 模型。源码：[GitHub](https://github.com/open-compass/opencompass)；学术向补充：[Compass Academic（HF Space）](https://huggingface.co/spaces/opencompass/Compass_Academic_Leaderboard)。中文场景选型时优先对照。
 
 ## 6\. SuperCLUE
 
@@ -67,69 +70,29 @@ bookHidden: true
 
 **主办**：CLUE 团队
 
-**备注**：专注于中文通用能力的综合榜单与评测体系，长期维护更新，是中文大模型评测的重要参考之一。详细评测内容可访问官网（[https://superclueai.com/](https://superclueai.com/)）。
+**备注**：长期维护的**中文通用能力**综合榜，维度贴近中文用户任务（理解、推理、生成等）。看国产/中文表现时与司南互补使用。
 
-## 7\. AlpacaEval 2.0
+## 7\. aider polyglot
 
-**链接**：[https://tatsu-lab.github.io/alpaca\_eval/](https://tatsu-lab.github.io/alpaca_eval/)
-
-**保持更新**：✅
-
-**主办**：Stanford Tatsu Lab
-
-**备注**：自动化指令跟随偏好评测基准，包含 length‑controlled（长度控制）版本，可有效缓解评测中的“长度偏置”问题。官方榜单（[https://tatsu-lab.github.io/alpaca\_eval/](https://tatsu-lab.github.io/alpaca_eval/)）及源码（[https://github.com/tatsu-lab/alpaca\_eval](https://github.com/tatsu-lab/alpaca_eval)）可在对应平台查看。
-
-## 8\. SWE‑bench（总榜）
-
-**链接**：[https://www.swebench.com/](https://www.swebench.com/)
+**链接**：[https://aider.chat/docs/leaderboards/](https://aider.chat/docs/leaderboards/)
 
 **保持更新**：✅
 
-**主办**：Princeton / SWE‑bench 团队
+**主办**：Aider
 
-**备注**：聚焦真实开源项目 issue 修复能力的评测，包含 Verified（验证版）、Lite（精简版）、Multimodal（多模态版）等子榜单，并提供云端提交流程供模型测试。详细排名可参考官网（[https://www.swebench.com/](https://www.swebench.com/)）。
+**备注**：面向**多语言代码编辑**的实战榜：基于 Exercism 225 题，覆盖 C++ / Go / Java / JS / Python / Rust。在 CLI 编程助手圈子里引用极多，适合交叉验证 SWE‑bench 之外的「改代码」能力。
 
-## 9\. OpenRouter Rankings
+## 8\. LiveBench
 
-**链接**：[https://openrouter.ai/rankings](https://openrouter.ai/rankings)
-
-**保持更新**：✅
-
-**主办**：OpenRouter
-
-**备注**：非纯能力榜单，核心统计 LLM 的**使用量/市占率**与品类热度，可帮助洞察当前市场中模型的“流行度”趋势。具体数据可查看 OpenRouter 排名页面（[https://openrouter.ai/rankings](https://openrouter.ai/rankings)）。
-
-## 10\. HAL（Holistic Agent Leaderboard）
-
-**链接**：[https://hal.cs.princeton.edu/](https://hal.cs.princeton.edu/)
+**链接**：[https://livebench.ai](https://livebench.ai/)
 
 **保持更新**：✅
 
-**主办**：Princeton SAgE
+**主办**：LiveBench / Abacus.AI 等
 
-**备注**：专注于 Agent（智能体）能力的总榜，采用多基准评测、成本感知机制及第三方独立评测，可直观查看模型在跨任务、跨数据集场景下的代理能力。官网（[https://hal.cs.princeton.edu/](https://hal.cs.princeton.edu/)）提供完整榜单数据。
+**备注**：强调**抗污染**的客观基准：题库滚动更新、尽量避免 LLM-as-judge。适合看推理/知识类「硬指标」补充，方法论见 [README](https://github.com/LiveBench/LiveBench/blob/main/README.md) 与 [说明 PDF](https://livebench.ai/livebench.pdf)。
 
-## 11\. LLMDB（聚合）
-
-**链接**：[https://llmdb.com/benchmarks](https://llmdb.com/benchmarks)
-
-**保持更新**：✅
-
-**主办**：LLMDB
-
-**备注**：多基准数据汇总与可视化平台，包含 AIME、LiveCodeBench、BFCL、WMT24、FACTS 等多个专题评测页面，可一站式查看不同基准下的模型表现。详情可访问（[https://llmdb.com/benchmarks](https://llmdb.com/benchmarks)）。
-
-## 12\. Vals AI Benchmarks
-
-**链接**：[https://www.vals.ai/benchmarks](https://www.vals.ai/benchmarks)
-
-**保持更新**：✅
-
-**主办**：Vals AI
-
-**备注**：聚焦**行业/场景化**评测的基准，覆盖法律、财税、金融等垂直领域，同时提供公开评测报告，并收录 MGSM、AIME 等学术基准的解析内容。参考资料包括 Vals AI 官网（[https://www.vals.ai/home](https://www.vals.ai/home)）及《华盛顿邮报》相关报道（[https://www.washingtonpost.com/politics/2025/04/22/ai-tools-mostly-fumble-basic-financial-tasks-study-finds/](https://www.washingtonpost.com/politics/2025/04/22/ai-tools-mostly-fumble-basic-financial-tasks-study-finds/)）。
-
-## 13\. Search Arena
+## 9\. Search Arena
 
 **链接**：[https://beta.lmarena.ai/leaderboard/search](https://beta.lmarena.ai/leaderboard/search)
 
@@ -137,9 +100,79 @@ bookHidden: true
 
 **主办**：LMSYS
 
-**备注**：专注于**联网问答**能力的榜单，核心考察模型的网页检索效率与引用内容的可溯源性，是评估模型实时信息获取能力的重要参考。可访问 beta 版页面（[https://beta.lmarena.ai/leaderboard/search](https://beta.lmarena.ai/leaderboard/search)）查看排名。
+**备注**：LMArena 的联网检索子榜：比的是「会不会查网页、引用能不能对上」，不是纯闭卷问答。需要评估实时信息能力时看这条，与主 Arena 分开解读。
 
-## 14\. Opper TaskBench
+## 10\. Models.dev
+
+**链接**：[https://models.dev/](https://models.dev/)
+
+**保持更新**：✅
+
+**主办**：OpenCode
+
+**备注**：开源**模型元数据库**（规格 / 定价 / Tool Call / 结构化输出等），按 Model · Provider · Lab 浏览；提供 JSON API 与 SDK（`@opencode-ai/models`）。用来查「这模型到底支持啥、多少钱」，不是打分榜。
+
+## 11\. llm-stats
+
+**链接**：[https://llm-stats.com/](https://llm-stats.com/)
+
+**保持更新**：✅
+
+**主办**：llm-stats
+
+**备注**：多模态对比站：LLM、图像、代码、语音等榜单 + 价格/速度/上下文窗口，并跟踪新模型发布。适合一眼扫行情；单项结论仍建议回源基准核验。
+
+## 12\. HAL（Holistic Agent Leaderboard）
+
+**链接**：[https://hal.cs.princeton.edu/](https://hal.cs.princeton.edu/)
+
+**保持更新**：✅
+
+**主办**：Princeton SAgE
+
+**备注**：Agent 能力总榜：多基准、成本感知、第三方评测视角。比 SWE‑bench 更「跨任务」，但社区曝光低于前几项；做 Agent 选型时可作补充证据。
+
+## 13\. AI Release Tracker
+
+**链接**：[https://aireleasetracker.com/](https://aireleasetracker.com/)
+
+**保持更新**：✅
+
+**主办**：AI Release Tracker
+
+**备注**：主流实验室的**发布时间线**（非能力榜），另有 [Analytics](https://aireleasetracker.com/analytics) 节奏分析与 [Expected](https://aireleasetracker.com/expected) 预期发布页。用来回答「最近谁发了什么」，不回答「谁更强」。
+
+## 14\. Vals AI Benchmarks
+
+**链接**：[https://www.vals.ai/benchmarks](https://www.vals.ai/benchmarks)
+
+**保持更新**：✅
+
+**主办**：Vals AI
+
+**备注**：偏**行业场景**（法律、财税、金融等）的评测与公开报告，也收录部分学术题解析。通用编程选型参考价值一般，垂直落地前值得看。[官网](https://www.vals.ai/home) · [相关报道](https://www.washingtonpost.com/politics/2025/04/22/ai-tools-mostly-fumble-basic-financial-tasks-study-finds/)。
+
+## 15\. Yupp
+
+**链接**：[https://yupp.ai/leaderboard](https://yupp.ai/leaderboard)
+
+**保持更新**：✅
+
+**主办**：Yupp
+
+**备注**：偏代码/实战向的社区榜单，体量与权威性不及 SWE‑bench / aider，适合当作交叉验证，不宜单独决策。
+
+## 16\. Roomote
+
+**链接**：[https://roomote.dev/models](https://roomote.dev/models)
+
+**保持更新**：✅
+
+**主办**：Roomote
+
+**备注**：Roomote 产品内的**按角色**评测（Coder / Reviewer / Advisor / Explorer / Vision / Router），并按质量·价格·速度偏好推荐。结论强绑定其工作流，迁用到其他 Agent 产品时要打折看。
+
+## 17\. Opper TaskBench
 
 **链接**：[https://opper.ai/models](https://opper.ai/models)
 
@@ -147,37 +180,9 @@ bookHidden: true
 
 **主办**：Opper Technology AB
 
-**备注**：以**任务完成率**为核心的实战型基准，评分范围 0.0–1.0，覆盖 Context（上下文理解）、SQL（数据库操作）、Agents（智能体协作）、Normalization（数据标准化）四类任务，同时收录 GPT-5-mini、GPT-5-nano 等小模型的评测数据。详情可参考（[https://opper.ai/models](https://opper.ai/models)）。
+**备注**：以任务完成率为核心的小而专基准（Context / SQL / Agents / Normalization），分数 0–1。曝光度有限，适合看「小模型能不能干活」的补充样本。
 
-## 15\. Roo Code
-
-**链接**：[https://roocode.com/evals](https://roocode.com/evals)
-
-**保持更新**：✅
-
-**主办**：Roo Code
-
-**备注**：代码能力评测基准，其使用的练习题与 aider polyglot 几乎一致，可作为代码类基准评测结果的交叉验证参考。具体评测内容可访问（[https://roocode.com/evals](https://roocode.com/evals)）。
-
-## 16\. Yuapp
-
-**链接**：[https://yupp.ai/leaderboard](https://yupp.ai/leaderboard)
-
-**保持更新**：✅
-
-**备注**：AI 模型评测排行榜网站，专注于代码能力评估，可作为代码类基准评测结果的交叉验证参考。。
-
-## 17\. llm-stats
-
-**链接**：[https://llm-stats.com/](https://llm-stats.com/)
-
-**保持更新**：✅
-
-**主办**：llm-stats 团队
-
-**备注**：综合性AI模型评测平台，覆盖LLM、图像生成、代码、语音等多模态评测，提供性能、价格、上下文窗口、速度等多维度对比。包含LLM排行榜、开源LLM排行榜、代码竞技场、图像竞技场等子榜单，同时追踪最新发布的AI模型。详情可访问官网（[https://llm-stats.com/](https://llm-stats.com/)）。
-
-## 18\. PinchBench（OpenClaw Agent Benchmark）
+## 18\. PinchBench（OpenClaw）
 
 **链接**：[https://pinchbench.com](https://pinchbench.com/)
 
@@ -185,7 +190,7 @@ bookHidden: true
 
 **主办**：Kilo Code 等
 
-**备注**：专注于 OpenClaw 体系下的智能体（Agent）能力评测，以**任务成功率**为核心指标，同时提供速度、成本、价值等维度对比。所有任务与打分标准开源，采用自动检查 + LLM 评判的混合方式完成评分，适合对比不同模型在 OpenClaw 场景中的实战表现。官网声明该榜单“主要用于娱乐，不应用于关键决策”，使用时需结合其他更严肃的评测基准综合参考（数据示例可见官网页面的模型成功率排名表）。
+**备注**：OpenClaw 场景下的 Agent 任务成功率榜（含速度/成本）。任务与评分开源，但官网标明**偏娱乐、勿作关键决策**——仅作趣味参考。
 
 ## 19\. LLM Benchmark Dashboard（llm2014）
 
@@ -193,6 +198,6 @@ bookHidden: true
 
 **保持更新**：✅
 
-**主办**：llm2014（个人长期跟踪项目）
+**主办**：llm2014（个人项目）
 
-**备注**：基于个人私有题目的大模型长期跟踪测评看板，支持按数据集/数据类别/模型模式筛选，提供测试成本、平均耗时等维度的可视化对比，适合作为日常“体感 + 性价比”变化的参考补充。
+**备注**：个人私有题库的长期跟踪看板，带成本与耗时维度。方法论不透明、样本非公开，只适合当「体感 + 性价比」旁证。

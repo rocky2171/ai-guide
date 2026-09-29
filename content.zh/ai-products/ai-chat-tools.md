@@ -8,7 +8,7 @@ bookHidden: false
 
 ## AI 对话工具：对比与选型
 
-主流对话式大模型产品速览，覆盖日常问答、长文阅读、搜索增强与多模态聊天。编程向模型选型见 **[模型与工具选型]({{< relref "ai-programming/models" >}})**。
+主流对话式大模型产品速览，覆盖日常问答、长文阅读、搜索增强与多模态聊天。编程向模型选型见 **[模型与工具选型]({{< relref "ai-programming/_index" >}})**。
 
 ## 速览对比表
 
@@ -35,5 +35,3 @@ bookHidden: false
 2. **国际旗舰能力**：ChatGPT、Claude、Gemini — 复杂推理、插件与生态更完整，通常需订阅或 API。
 3. **查资料 / 要引用**：Perplexity — 适合调研、新闻与时效信息，答案附来源。
 4. **办公套件内置**：Copilot、元宝 — 已在 Microsoft / 腾讯产品内，适合文档、会议与协作场景。
-
-入门路径：[新手如何快速上手 AI]({{< relref "ai-programming/ai-beginner" >}})

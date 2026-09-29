@@ -14,11 +14,11 @@ bookHidden: false
 **站内教程**
 
 - [系统学习 AI 知识资源指南]({{< relref "tutorials/ai-learning-guide" >}}) — 🔥精选各大 AI 公司和顶尖机构的官方学习资源，帮助你从入门到精通系统掌握 AI 知识。
-- [精选 LLM 应用集]({{< relref "tutorials/awesome-llm-apps" >}}) — LLM 开源应用生态应用集合
 - [菜鸟教程 AI / 智能开发]({{< relref "tutorials/runoob-online-tutorials" >}}) — RUNOOB 中文 AI 教程速查表
 
 **通用 / 开源社区**
 - [HelloGitHub](https://hellogithub.com/) — 发现和分享有趣、入门级开源项目的社区，提供月刊、榜单与精选项目推荐
+- [bestjev](https://jevbest.com/zh/) — 已核验的 Jev / TypeSafe System One 开源项目目录（可按分类与语言筛选）
 - [天池AI学习空间](https://tianchi.aliyun.com/course) 阿里云官方-天池AI学习空间
 - [学 AI 产品，从入门到精通](https://xueai.miyang.cn/slides/learn.html) — 小山学堂：AI 产品课程学习
 - [Datawhale](https://www.datawhale.cn/) — 开源学习社区
@@ -26,6 +26,8 @@ bookHidden: false
 - [从零开始构建智能体](https://datawhalechina.github.io/hello-agents/) — 智能体入门与实战
 - [检索增强生成 (RAG) 技术全栈指南](https://datawhalechina.github.io/all-in-rag) — RAG 全栈学习路径
 - [大模型应用开发：上下文工程与运行空间实践指南](https://github.com/WakeUp-Jin/Practical-Guide-to-Context-Engineering) — 上下文工程（与 RAG、提示词工程的关系）、Harness Engineering（Agent 运行空间）；[在线阅读](https://wakeup-jin.github.io/Practical-Guide-to-Context-Engineering/)
+- [AI 原生应用架构白皮书](https://developer.aliyun.com/ebook/8479/read) — 阿里云：AI 原生应用 DevOps 全生命周期（架构、选型、工程实践到运维优化）；[在线手册](https://ai-native.alistatic.com/app/ainativeinfra/ai-native-handbook-web/index)
+- [AI Agent Handbook](https://github.com/aliyun/ai-agent-handbook) — 阿里云开源企业级 Agent 白皮书：按架构、构建、运行、治理、调优覆盖全生命周期（前作《AI 原生应用架构白皮书》的续作）
 
 ---
 

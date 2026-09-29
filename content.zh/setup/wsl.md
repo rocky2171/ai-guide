@@ -8,14 +8,15 @@ noTocArea: true
 bookHidden: false
 ---
 
-## WSL 开发环境：Claude Code 安装与使用
+## WSL 开发环境： 安装与使用
 
 ## 终端选择（可选）
 
 - Zellij：Rust 实现的 `tmux` 替代 - [zellij.dev](https://zellij.dev/)
 - WezTerm：跨平台终端，Windows 上更稳 - [wezterm.org](https://wezterm.org/install/windows.html)
+- [CLI-Manager](https://github.com/dark-hxx/CLI-Manager)：Windows 侧 AI CLI 工作台，内置终端可直接开 WSL；Hook 通知、会话 Diff、用量看板、多项目 Worktree，对接 Claude Code / Codex
 
-不想用 Rust 方案就直接选 WezTerm。
+只想换终端用不想用 Rust 方案就选 WezTerm；要桌面工作台管 Claude Code / Codex（含 WSL 终端）再看 CLI-Manager。更完整的工具合集见 [环境配置：工具与增强]({{< relref "setup/env-and-tools" >}})。
 
 ## 启用 WSL
 
@@ -95,3 +96,7 @@ cd /mnt/c/Users/<你的Windows用户名>/projects
 ## 安全建议
 
 日常开发用普通用户跑 WSL，不要用 root。
+
+## 想要完整 Agent 原生 Linux？
+
+WSL 够用日常开发；若想整机换成 Agent 优先的桌面 Linux，可看 [Omarchy](https://zh.omarchy.org/)（DHH）：Arch + Hyprland，开箱装好终端 / 编辑器 / Agent，也能在 Windows 虚拟机里先试用。安装与手册见官网。

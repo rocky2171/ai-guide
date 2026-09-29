@@ -63,8 +63,8 @@ flowchart TB
   Root --> PP[project-practice<br/>项目实践]
   Root --> TU[tutorials<br/>学习与资源]
 
-  AP --> AP1[models.md<br/>编程模型选型]
-  AP --> AP2[models-2026.md / model-price.md]
+  AP --> AP1[Leaderboard.md / model-comparison.md]
+  AP --> AP2[model-price.md]
   SU --> SU1[dev-start.md / env-and-tools.md]
   WF --> WF1[ccg-workflow.md / ccg.md]
   AG --> AG1[rules / skills / mcp]
@@ -76,7 +76,7 @@ flowchart TB
 
 - **入门与选型（`content.zh/ai-programming/`）**
   - **入口**：`content.zh/ai-programming/_index.md`
-  - **代表页面**：`models.md`、`models-2026.md`、`coding-plan.md`、`code-cli.md`
+  - **代表页面**：`Leaderboard.md`、`model-price.md`、`coding-plan.md`、`code-cli.md`
 - **环境与工具（`content.zh/setup/`）**
   - **入口**：`content.zh/setup/_index.md`
   - **代表页面**：`dev-start.md`、`env-and-tools.md`、`zcf.md`、`cc-switch.md`、`cpa.md`
@@ -91,13 +91,13 @@ flowchart TB
   - **代表页面**：`practices-two.md`、`practices-one.md`、`best-practices.md`、`everything-claude-code.md`
 - **学习与资源（`content.zh/tutorials/`）**
   - **入口**：`content.zh/tutorials/_index.md`
-  - **代表页面**：`ai-learning-guide.md`、`ai-resources-guide.md`、`awesome-llm-apps.md`
+  - **代表页面**：`ai-learning-guide.md`、`ai-resources-guide.md`
 
 ## 导航面包屑（统一格式）
 
 **格式**：`ai-guide / <模块> / <页面>`  
 **示例**：
-- `ai-guide / ai-programming / models`
+- `ai-guide / ai-programming / Leaderboard`
 - `ai-guide / setup / dev-start`
 - `ai-guide / agent / workflow`
 - `ai-guide / project-practice / practices-two`

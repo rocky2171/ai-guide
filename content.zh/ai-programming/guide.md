@@ -9,19 +9,17 @@ bookHidden: true
 
 ## AI 编程学习路径
 
-本栏目按**从零上手到稳定产出**的顺序组织：先建立 AI 体感 → 选模型/工具 → **[环境配置]({{< relref "setup/_index" >}})** → **[工作流与编排]({{< relref "workflow/_index" >}})** → 进阶学习。
-如果你完全没概念，从 **0** 开始；第一次配环境建议按 **1 → 2** 顺序阅读后进入环境栏。
+本栏目按**从零上手到稳定产出**的顺序组织：选模型/工具 → **[环境配置]({{< relref "setup/_index" >}})** → **[工作流与编排]({{< relref "workflow/_index" >}})** → 进阶学习。
+第一次配环境建议按 **1 → 2** 顺序阅读后进入环境栏。
 
 > 与 **[模型与工具选型]({{< relref "ai-programming/_index" >}})** 栏目入口互补；本页作为学习路线入口收录在侧栏中。
 
-### 0. 先建立体感（非程序员也适用）
-- [新手如何快速上手 AI]({{< relref "ai-programming/ai-beginner" >}}) — 从会聊天到提效：体感 → 模型生态 → 客户端 → 智能体 → 如何描述问题
-
 ### 1. 选模型和工具
-- [AI 编程模型选型]({{< relref "ai-programming/models" >}}) — 🔥能力、价格与适用场景
+- [LLM 评测基准与榜单汇总]({{< relref "ai-programming/Leaderboard" >}}) — 评测基准、榜单来源与参考
+- [大模型价格]({{< relref "ai-programming/model-price" >}}) — Token 口径成本参考
 - [AI Coding Plan 订阅选型]({{< relref "ai-programming/coding-plan" >}}) — 国内/海外 Coding Plan 与中转套餐对照
 - [AI 产品推荐]({{< relref "ai-products/ai-product" >}}) — 桌面 Agent、API 客户端、翻译等实用产品
-- [AI 编程省钱之道]({{< relref "ai-programming/ai-coding-save-money" >}}) — 免费模型、Token 优化与多端复用
+- [AI 编程省钱之道]({{< relref "ai-programming/ai-coding-save-money" >}}) — 同样做事、尽量少耗 Token
 - [AI 编程工具汇总]({{< relref "ai-programming/vb-code-tool" >}}) — IDE/插件/Agent 工具对比（Aider、Cursor、Codex 等）
 - [AI CLI 工具横评]({{< relref "ai-programming/code-cli" >}}) — OpenCode、Claude Code、Codex CLI、Gemini CLI 等主流 CLI 横评
 

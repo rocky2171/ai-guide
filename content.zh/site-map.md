@@ -10,8 +10,6 @@ translationKey: site-map
 
 ## 1) 选模型 / 选引擎（能力 × 成本 × 适配任务）
 
-- [AI 编程模型选型]({{< relref "ai-programming/models" >}})：面向编程任务挑模型。
-- [2026 年主流大模型盘点]({{< relref "ai-programming/models-2026" >}})：快速建立市场全景与模型定位。
 - [大模型价格]({{< relref "ai-programming/model-price" >}})：用 Token 口径做成本估算与预算。
 - [LiveBench AI 排行榜]({{< relref "ai-programming/model-comparison" >}})：参考推理/编程/数学等维度的对比。
 - [LLM 评测基准与榜单汇总]({{< relref "ai-programming/Leaderboard" >}})：理解榜单来源与正确用法。
@@ -27,7 +25,7 @@ translationKey: site-map
 - [AI CLI 工具横评]({{< relref "ai-programming/code-cli" >}})：Claude Code / Codex CLI / Gemini CLI 等适用场景对比。
 - [AI Coding Plan 订阅选型]({{< relref "ai-programming/coding-plan" >}})：套餐怎么选更划算。
 - [AI 大模型 API 聚合平台]({{< relref "ai-programming/api-aggregation-platforms" >}})：第三方代理 / 聚合怎么选。
-- [AI 编程省钱之道]({{< relref "ai-programming/ai-coding-save-money" >}})：免费额度与 Token 优化。
+- [AI 编程省钱之道]({{< relref "ai-programming/ai-coding-save-money" >}})：同样做事、尽量少耗 Token。
 - 选完即上手：[Cursor]({{< relref "project-practice/cursor" >}}) · [Codex]({{< relref "project-practice/codex" >}}) · [Kiro]({{< relref "project-practice/kiro-practice" >}})
 
 ## 3) 搭环境 & 接模型（尽量一次配置到位）
@@ -75,5 +73,4 @@ translationKey: site-map
 - [AI 资源与工具指南]({{< relref "tutorials/ai-resources-guide" >}})：站内精选 + 常用社区/工具/资讯。
 - [菜鸟教程 AI / 智能开发]({{< relref "tutorials/runoob-online-tutorials" >}})：RUNOOB 中文 AI 教程速查表。
 - [GitHub 周边工具速查]({{< relref "tutorials/github-extensions" >}})：加速、仓库阅读与效率工具。
-- [Awesome LLM Apps]({{< relref "tutorials/awesome-llm-apps" >}})：优秀应用与灵感库。
 - [Awesome OpenClaw 使用案例]({{< relref "ai-products/awesome-openclaw" >}})：OpenClaw 生态分支速览（亦见 **[AI 应用选型]({{< relref "ai-products/_index" >}})**）。

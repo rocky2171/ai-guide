@@ -83,7 +83,20 @@ npx skills add vercel-labs/agent-skills
 ```
 原理很直接：将 Skill 下载到 .agents/skills/，检测系统中的 AI 工具（Claude、Cursor、Windsurf 等），在各工具的 Skills 目录创建指向 .agents/skills/ 的软链接。开发者只需维护一份源文件，所有工具实时同步。这也是小编之前写过的《为什么我劝你使用 skills.sh 管理 skills》，对于它的使用可以转战这篇文章。随着平台原生支持 .agents/skills，软链接这种过渡方案会逐渐退出，但 skills.sh 的方案默认就是在 .agents 目录下，所以软链接方案会被淘汰，但 skills.sh 仍然好用。将来，你可以直接把 Skills 放在 .agents/skills 下，让所有平台自动识别，也可以继续使用 skills.sh。
 
+#### 团队层的共享方案
 
+[skills.sh](https://skills.sh/) 解决的是「一个人、多工具」的目录同步；团队要把 Skills / Rules / MCP / Agents 等资产统一给所有人用，可以用腾讯开源的 [TeamAI](https://github.com/Tencent/teamai-cli)：以 Git 仓库为共享底座，成员 `teamai init` 后自动拉取最新资产，覆盖 Claude Code、Codex、Cursor、CodeBuddy 等主流 Agent。
+
+```shell
+npm install -g teamai-cli
+# 或在 Agent 里安装 skill 后对话引导：
+# Install the teamai skill: https://github.com/Tencent/teamai-cli/tree/main/skills/teamai
+```
+
+{{% hint info %}}
+**怎么选**  
+本机多工具装同一套 Skill → [skills.sh](https://skills.sh/)；多人共享团队 AI 资产并持续同步 → [TeamAI](https://github.com/Tencent/teamai-cli)。
+{{% /hint %}}
 
 ### 四、Agent Skills 规范说明
 
@@ -111,8 +124,10 @@ skill/employees/
 - [`agent-tools`](https://github.com/toolshell/skills)：Agent 常用小工具；`npx skills add https://github.com/toolshell/skills --skill agent-tools`
 - [`using-superpowers`](https://github.com/obra/superpowers) / [`brainstorming`](https://github.com/obra/superpowers)：工作流元能力与需求澄清；`npx skills add https://github.com/obra/superpowers --skill using-superpowers`
 - [Waza](https://github.com/tw93/Waza)：把常见工程习惯收成 8 个可链式调用的 Skill（`/think` 决策规划、`/ui` 前端审美、`/check` 合并前审查、`/hunt` 根因调试、`/write` 中英润色、`/learn` 调研写作、`/read` URL/PDF、`/health` Agent 健康审计）；比 Superpowers / gstack 更轻量；`npx skills add tw93/Waza -a claude-code codex cursor antigravity-cli -g -y`
+- [Birdview](https://github.com/Qiuner/birdview)：改代码前先出架构与约束地图（模块关系、适用规则、拟改范围、证据与验证），确认后再动手，输出可浏览器打开的独立 HTML；`npx skills add Qiuner/birdview --skill birdview`
 - [`mcp-builder`](https://github.com/anthropics/skills/tree/main/skills/mcp-builder)：连接外部工具的 MCP 构建器
 - [Matt Pocock / skills](https://github.com/mattpocock/skills)：工程交付工作流（`grill-with-docs`、`to-prd`、`to-issues`、`tdd`、`diagnose`）；`npx skills add mattpocock/skills`
+- [HumanLayer Skills](https://github.com/humanlayer/skills)：工程可视化与 Agent 控制环（`show-me` 图解、`visual-pr` 可视化 PR、`improve-claude-md`、`design-control-loop` 等）；`npx skills add humanlayer/skills --skill show-me`
 - [Anthropic Skills](https://github.com/anthropics/skills)：官方技能实现与 `skill-creator` / `mcp-builder`
 - [Vercel Skills](https://github.com/vercel-labs/skills)：含 `find-skills` 等示例
 - [MiniMax Skills](https://github.com/MiniMax-AI/skills)：官方开发技能库（Beta）
@@ -147,6 +162,7 @@ skill/employees/
 - [`pdf`](https://github.com/anthropics/skills/tree/main/skills/pdf)（Anthropic）：提取、合并、OCR、表单处理、拆分 PDF
 - [`docx`](https://github.com/anthropics/skills/tree/main/skills/docx)（Anthropic）：正式报告、方案、备忘录、函件
 - [`xlsx`](https://github.com/anthropics/skills/tree/main/skills/xlsx)（Anthropic）：表格、公式、格式化、图表
+- [anydoc](https://anydoc.wiki/)（[Firecrawl](https://github.com/firecrawl/anydoc)）：Word / PPT / Excel / PDF 等 14 种办公文档 → 干净 GFM Markdown；纯本地毫秒级，可作 Agent Skill；`npx @firecrawl/anydoc`
 - [`transcribe`](https://github.com/openai/skills/tree/main/skills/.curated/transcribe)（OpenAI）：会议录音、访谈转文字
 - [`internal-comms`](https://github.com/anthropics/skills/tree/main/skills/internal-comms)（Anthropic）：周报、项目更新、公告
 - [`doc-coauthoring`](https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring)（Anthropic）：协作写作，整理成正式文档
@@ -156,12 +172,13 @@ skill/employees/
 
 {{% hint info %}}
 **边界说明**  
-官方 `pptx` 属于「办公文档读写」。若要「浏览器里快速出完整 deck、改字换图再导出 PPTX」，请看 [**PPT / 演示文稿**](#ppt--演示文稿)（[dashi-ppt-skill](https://github.com/chuspeeism/dashi-ppt-skill)），不要和通用办公混选。
+官方 `pptx` / `docx` / `pdf` 偏「读写与精修办公文档」。若要把本地 Word/PPT/Excel/PDF **转成给 Agent 读的 Markdown**，用 [anydoc](https://anydoc.wiki/)。若要「浏览器里快速出完整 deck、改字换图再导出 PPTX」，请看 [**PPT / 演示文稿**](#ppt--演示文稿)（[dashi-ppt-skill](https://github.com/chuspeeism/dashi-ppt-skill)）。
 {{% /hint %}}
 
 #### 公众号 / 内容创作
 
 - [gzh-design-skill](https://github.com/isjiamu/gzh-design-skill)：Markdown → 可粘贴进公众号编辑器的 HTML（6 套主题 + 主题生成器）；`npx skills add https://github.com/isjiamu/gzh-design-skill`
+- [Humanizer-zh](https://github.com/op7418/Humanizer-zh)：中文文本润色，去掉空话、套话和 AI 痕迹，保留事实与作者声音；`npx skills add https://github.com/op7418/Humanizer-zh.git`
 - [baoyu-skills](https://github.com/jimliu/baoyu-skills)：文配图 / 插画生成
 
 #### PPT / 演示文稿
@@ -192,6 +209,7 @@ skill/employees/
 #### 安装与管理工具
 
 - [Skills.sh](https://skills.sh/)：CLI 安装 / 更新 Skills；[热门技能页](https://skills.sh) 可看趋势。
+- [TeamAI](https://github.com/Tencent/teamai-cli)：团队级 Skills / Rules / MCP / Agents 共享与同步（Git 底座 + `teamai init`）；`npm install -g teamai-cli`。
 - [Skill Creator](https://github.com/anthropics/skills/tree/main/skills/skill-creator)：Anthropic 官方技能模板与创建向导。
 - [MCPMarket Skills Leaderboard](https://mcpmarket.com/zh/tools/skills/leaderboard)：第三方技能榜单与工具导航。
 - [ClawHub Skills](https://clawhub.ai/skills)：ClawHub 平台技能市场。

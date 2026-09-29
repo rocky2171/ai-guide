@@ -16,6 +16,8 @@ bookHidden: false
 看中转价格时，不能只看「官方 API 标价额度」，还要看三件事：**订阅真实成本**、**按 API 标价折算出来的额度**、**卖给用户时的倍率**。三层分清楚，才能理解为什么有些站倍率能做到 0.1、0.2，也能看懂为什么过低价格往往意味着更高渠道风险。
 {{% /hint %}}
 
+![看中转价格要分三层](/images/api-relay-station/01-framework-three-price-layers.png)
+
 ## 常见程序与典型结构
 
 目前中转站一般使用几类程序。市面上大部分中转都是类似结构；即使有自建程序，也多是在这些项目基础上拓展 UI 或功能。
@@ -25,6 +27,8 @@ bookHidden: false
 | **[New API](https://github.com/QuantumNous/new-api)** | API 分发 | 从 [One API](https://github.com/songquanpeng/one-api) 延伸；将 API Key 或上游渠道按规则分发给用户，可设额度、倍率、可用模型等 |
 | **[Sub2API](https://github.com/Wei-Shaw/sub2api)** | 订阅分发 | 侧重把 Claude / OpenAI / Gemini 等 **订阅** 分享出来；含防封号、会话粘性、拼车共享等 |
 | **[CPA（CLI Proxy API）]({{< relref "setup/cpa" >}})** | 自用 / 拼车 | 从 CLI（Codex、Claude Code 等）拿订阅能力再分发；分发属性较低，一般无计费模块，多用于拼车 |
+| **[gpt-load](https://github.com/tbphp/gpt-load)** | Key 轮询 / 负载均衡 | 多通道 API Key 轮询与负载均衡，自动容错；偏基础设施层，常挂在分发程序前面或后面 |
+| **[axonhub](https://github.com/looplj/axonhub)** | 流量网关 / 多租户 | AI 流量网关，带 RBAC 与多租户权限；适合需要权限隔离、团队分账的自建场景 |
 
 **典型结构：**
 
@@ -34,11 +38,15 @@ bookHidden: false
 用户 → Sub2API（直接分发订阅）
 ```
 
+![中转站典型结构](/images/api-relay-station/02-flowchart-typical-stack.png)
+
 **New API** 的典型场景：你有渠道可以用美元向 OpenAI 购买 API，再通过中转分发给用户；用户使用时会受后台规则约束（额度、倍率、模型白名单等）。核心是 **分发**。
 
 **Sub2API** 可以把订阅理解成 AI 厂家开的自助餐；订阅分发就像你在店里下了团购，站在店门口把饭端出去分给外面的人。核心是 **分发订阅**，并处理防封号等相关操作。New API 也有类似能力，但不是其重点。
 
 **CPA** 与 Sub2API 一样从订阅拿号，但更侧重从 **CLI 终端程序** 获得订阅能力。分发属性较低，更像自用的订阅中转，一般不带计费，常见于拼车。
+
+**gpt-load**、**axonhub** 不直接做「卖额度」那套业务模型，更偏运维与网关：前者管多 Key 轮询与容错，后者管流量入口与多租户权限。完整项目索引见 [环境配置 · 路由代理与 API 网关]({{< relref "setup/env-and-tools" >}})。
 
 ## 网络与服务器
 
@@ -113,6 +121,8 @@ bookHidden: false
 
 若倍率 **0.1**、只卖出 6000 元口径：`6000 × 0.1 = 600`，相对 1400 元成本会亏钱（`1400/6000 ≈ 0.23`，`1400/10000 ≈ 0.14`）。
 
+![Pro 号成本撬额度示意](/images/api-relay-station/03-infographic-pro-cost-math.png)
+
 ## 除 Pro 号外的常见渠道
 
 这些渠道可以解释为什么有些站曾经能做到极低倍率（甚至 0.01），也解释低价背后的风险。
@@ -159,6 +169,8 @@ OpenAI 会给不同地区用户 **首月优惠**，只需提供支付方式即�
 3. **警惕过低倍率**：长期 0.05 以下往往对应更高渠道风险或不可持续。
 4. **重要项目走官方路径**：生产环境、高敏感数据优先官方订阅或企业采购；中转更适合补接入、试用或预算有限场景。
 
+![评估与避坑清单](/images/api-relay-station/04-framework-risk-checklist.png)
+
 {{% hint warning %}}
 部分私有渠道可能违反平台服务条款，存在封号、额度缩水、跑路等风险。本文仅作技术结构与成本口径说明，不构成对任何第三方服务的推荐或担保。
 {{% /hint %}}
@@ -167,5 +179,5 @@ OpenAI 会给不同地区用户 **首月优惠**，只需提供支付方式即�
 
 - [AI Coding Plan 订阅选型]({{< relref "ai-programming/coding-plan" >}}) — 第三方中转渠道与服务对照表
 - [CLI 代理 API（CPA）]({{< relref "setup/cpa" >}}) — 订阅转 API 的网关方案
-- [环境配置 · 网关与聚合]({{< relref "setup/env-and-tools" >}}) — New API、Sub2API、metapi 等项目索引
-- [AI 编程省钱之道]({{< relref "ai-programming/ai-coding-save-money" >}}) — 免费额度与 Token 优化
+- [环境配置 · 路由代理与 API 网关]({{< relref "setup/env-and-tools" >}}) — New API、Sub2API、gpt-load、axonhub、metapi 等项目索引
+- [AI 编程省钱之道]({{< relref "ai-programming/ai-coding-save-money" >}}) — 同样做事、尽量少耗 Token
